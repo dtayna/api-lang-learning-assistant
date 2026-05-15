@@ -5,6 +5,9 @@ from app.database import Base, engine
 from app.routes.word_routes import router as word_router
 from app.models.word import Word
 
+from app.routes.note_routes import router as note_router
+from app.models.note import Note
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
@@ -18,7 +21,7 @@ app.add_middleware(
 )
 
 app.include_router(word_router, prefix="/words", tags=["Words"])
-
+app.include_router(note_router, prefix="/notes", tags=["Notes"])
 
 @app.get("/")
 def root():
