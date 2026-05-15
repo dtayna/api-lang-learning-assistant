@@ -50,7 +50,7 @@ DATABASE_URL=postgresql://postgres:1234@localhost:5432/lang_learning
 
 ---
 
-## 5
+## 5 Up DB container
 
 ```bash
 docker compose up -d
